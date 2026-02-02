@@ -103,9 +103,7 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     await update.message.reply_text("📊 Statistikalar:\nHozircha statistikalar mavjud emas")
-
-
-async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     
     if user.id == ADMIN_ID:
