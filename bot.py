@@ -1,5 +1,3 @@
-Muhammadali Mukhitdinov, [3 февр. 2026 г., 01:41:18]:
-`python
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
@@ -107,7 +105,6 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("📊 Statistikalar:\nHozircha statistikalar mavjud emas")
 
 
-Muhammadali Mukhitdinov, [3 февр. 2026 г., 01:41:18]:
 async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     
@@ -142,4 +139,3 @@ def main():
 
 if name == "main":
     main()
-`
