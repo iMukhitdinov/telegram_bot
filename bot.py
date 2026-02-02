@@ -46,15 +46,13 @@ async def admin_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except:
                 await update.message.reply_text("❌ Foydalanuvchi botni bloklagan")
 
-def main():
-    app = ApplicationBuilder().token(TOKEN).build()
-    
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND & ~filters.User(ADMIN_ID), user_message))
-    app.add_handler(MessageHandler(filters.TEXT & filters.REPLY & filters.User(ADMIN_ID), admin_reply))
-    
-    print("✅ Bot ishga tushdi...")
-    app.run_polling()
+# Botni yaratish
+app = ApplicationBuilder().token(TOKEN).build()
 
-if name == "main":
-    main()
+# Handler'lar
+app.add_handler(CommandHandler("start", start))
+app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND & ~filters.User(ADMIN_ID), user_message))
+app.add_handler(MessageHandler(filters.TEXT & filters.REPLY & filters.User(ADMIN_ID), admin_reply))
+
+print("✅ Bot ishga tushdi...")
+app.run_polling()
